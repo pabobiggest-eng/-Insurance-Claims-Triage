@@ -1,0 +1,319 @@
+{
+  "project_name": "Insurance Claims Triage",
+  "created_at_local": "2026-10-15 07:02:35",
+  "root": "C:\\Users\\National\\Downloads\\insurance-claims-triage\\insurance-claims-triage",
+  "target": "is_inpatient",
+  "split_method": "existing train.csv/test.csv",
+  "train_rows": 676992,
+  "test_rows": 169250,
+  "total_rows": 846242,
+  "total_input_columns": 44,
+  "retained_predictors": 28,
+  "excluded_columns_count": 16,
+  "excluded_columns": [
+    {
+      "feature": "DESYNPUF_ID",
+      "decision": "EXCLUDED",
+      "reason": "Identifier; high-cardinality / memorisation risk"
+    },
+    {
+      "feature": "CLM_ID",
+      "decision": "EXCLUDED",
+      "reason": "Identifier; high-cardinality / memorisation risk"
+    },
+    {
+      "feature": "is_inpatient",
+      "decision": "EXCLUDED",
+      "reason": "Target label; never a predictor"
+    },
+    {
+      "feature": "CLM_PMT_AMT",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "NCH_PRMRY_PYR_CLM_PD_AMT",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "NCH_BENE_BLOOD_DDCTBL_LBLTY_AM",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "MEDREIMB_IP",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "BENRES_IP",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "PPPYMT_IP",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "MEDREIMB_OP",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "BENRES_OP",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "PPPYMT_OP",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "MEDREIMB_CAR",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "BENRES_CAR",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "PPPYMT_CAR",
+      "decision": "EXCLUDED",
+      "reason": "Claim payment/reimbursement; potential target leakage or post-decision information"
+    },
+    {
+      "feature": "claim_duration_days",
+      "decision": "EXCLUDED",
+      "reason": "Potential post-outcome field; excluded to reduce temporal leakage"
+    }
+  ],
+  "included_predictors": [
+    "BENE_SEX_IDENT_CD",
+    "BENE_RACE_CD",
+    "BENE_HI_CVRAGE_TOT_MONS",
+    "BENE_SMI_CVRAGE_TOT_MONS",
+    "BENE_HMO_CVRAGE_TOT_MONS",
+    "PLAN_CVRG_MOS_NUM",
+    "SP_ALZHDMTA",
+    "SP_CHF",
+    "SP_CHRNKIDN",
+    "SP_CNCR",
+    "SP_COPD",
+    "SP_DEPRESSN",
+    "SP_DIABETES",
+    "SP_ISCHMCHT",
+    "SP_OSTEOPRS",
+    "SP_RA_OA",
+    "SP_STRKETIA",
+    "n_dx",
+    "n_prcdr",
+    "n_physicians",
+    "dx_chapter",
+    "BENE_ESRD_IND",
+    "SP_STATE_CODE",
+    "claim_year",
+    "claim_month",
+    "age_at_claim",
+    "is_deceased",
+    "chronic_count"
+  ],
+  "target_balance": {
+    "target": "is_inpatient",
+    "counts": {
+      "0": 779537,
+      "1": 66705
+    },
+    "percentages": {
+      "0": 92.1175,
+      "1": 7.8825
+    },
+    "majority_to_minority_ratio": 11.6863,
+    "imbalance_threshold_ratio": 1.5,
+    "imbalance_handling_recommended": true
+  },
+  "best_model": "Random_Forest",
+  "best_metrics": {
+    "accuracy": 0.9620443131462334,
+    "balanced_accuracy": 0.939814712884177,
+    "precision": 0.6981380693211114,
+    "recall": 0.9134247807510681,
+    "f1": 0.7914014807117807,
+    "matthews_corrcoef": 0.7793649568592984,
+    "roc_auc": 0.9867432752249979,
+    "average_precision_pr_auc": 0.9172441779006668
+  },
+  "model_summary": {
+    "target": "is_inpatient",
+    "train_rows_used": 100000,
+    "test_rows_evaluated": 169250,
+    "predictor_count": 28,
+    "imbalance_ratio_in_model_training_data": 11.6855,
+    "imbalance_handling_used": true,
+    "imbalance_method": "class_weight='balanced' for supported models; no resampling",
+    "best_model_by_f1_then_pr_auc": "Random_Forest",
+    "best_model_metrics": {
+      "accuracy": 0.9620443131462334,
+      "balanced_accuracy": 0.939814712884177,
+      "precision": 0.6981380693211114,
+      "recall": 0.9134247807510681,
+      "f1": 0.7914014807117807,
+      "matthews_corrcoef": 0.7793649568592984,
+      "roc_auc": 0.9867432752249979,
+      "average_precision_pr_auc": 0.9172441779006668
+    },
+    "models_attempted": 10,
+    "models_successful": 10,
+    "models": [
+      {
+        "model": "Random_Forest",
+        "accuracy": 0.9620443131462334,
+        "balanced_accuracy": 0.939814712884177,
+        "precision": 0.6981380693211114,
+        "recall": 0.9134247807510681,
+        "f1": 0.7914014807117807,
+        "matthews_corrcoef": 0.7793649568592984,
+        "roc_auc": 0.9867432752249979,
+        "average_precision_pr_auc": 0.9172441779006668,
+        "training_seconds": 50.88,
+        "status": "OK"
+      },
+      {
+        "model": "Extra_Trees",
+        "accuracy": 0.9585288035450517,
+        "balanced_accuracy": 0.9243693253862049,
+        "precision": 0.6831402085747392,
+        "recall": 0.8838168053369313,
+        "f1": 0.7706284108362472,
+        "matthews_corrcoef": 0.7557460081007159,
+        "roc_auc": 0.9833410339529727,
+        "average_precision_pr_auc": 0.889921821596558,
+        "training_seconds": 75.49,
+        "status": "OK"
+      },
+      {
+        "model": "AdaBoost",
+        "accuracy": 0.9686617429837519,
+        "balanced_accuracy": 0.8138604671721557,
+        "precision": 0.9579487179487179,
+        "recall": 0.6300876995727457,
+        "f1": 0.7601736299511666,
+        "matthews_corrcoef": 0.7629026840588036,
+        "roc_auc": 0.9856446423839167,
+        "average_precision_pr_auc": 0.8989095245528727,
+        "training_seconds": 28.13,
+        "status": "OK"
+      },
+      {
+        "model": "Logistic_Regression",
+        "accuracy": 0.9505228951255539,
+        "balanced_accuracy": 0.9451448153395026,
+        "precision": 0.6236741198147503,
+        "recall": 0.9387602128775954,
+        "f1": 0.74944647238346,
+        "matthews_corrcoef": 0.7418722782316555,
+        "roc_auc": 0.9883248874932914,
+        "average_precision_pr_auc": 0.9232123412248924,
+        "training_seconds": 13.37,
+        "status": "OK"
+      },
+      {
+        "model": "SGD_Classifier",
+        "accuracy": 0.9570103397341211,
+        "balanced_accuracy": 0.8852639159584945,
+        "precision": 0.6984230844729438,
+        "recall": 0.8000899482797391,
+        "f1": 0.7458077138065958,
+        "matthews_corrcoef": 0.7244359349721191,
+        "roc_auc": 0.9111172018530129,
+        "average_precision_pr_auc": 0.611213940985033,
+        "training_seconds": 23.82,
+        "status": "OK"
+      },
+      {
+        "model": "Linear_SVM",
+        "accuracy": 0.9484017725258493,
+        "balanced_accuracy": 0.9438564169110832,
+        "precision": 0.6127642913077526,
+        "recall": 0.9384603852784649,
+        "f1": 0.7414206614751429,
+        "matthews_corrcoef": 0.734207999292125,
+        "roc_auc": 0.9879917487880876,
+        "average_precision_pr_auc": 0.9194415999018253,
+        "training_seconds": 9.94,
+        "status": "OK"
+      },
+      {
+        "model": "Decision_Tree",
+        "accuracy": 0.948821270310192,
+        "balanced_accuracy": 0.9250634585669334,
+        "precision": 0.6215261544854813,
+        "recall": 0.896859305899108,
+        "f1": 0.7342292587137947,
+        "matthews_corrcoef": 0.7215106125719644,
+        "roc_auc": 0.9455245049290136,
+        "average_precision_pr_auc": 0.849643703201959,
+        "training_seconds": 15.92,
+        "status": "OK"
+      },
+      {
+        "model": "Ridge_Classifier",
+        "accuracy": 0.9215420974889217,
+        "balanced_accuracy": 0.9140266039969696,
+        "precision": 0.5012869478578545,
+        "recall": 0.9051045648751967,
+        "f1": 0.6452216195997755,
+        "matthews_corrcoef": 0.6386474556127106,
+        "roc_auc": 0.9728650359276264,
+        "average_precision_pr_auc": 0.8187204121901862,
+        "training_seconds": 9.3,
+        "status": "OK"
+      },
+      {
+        "model": "Gaussian_NB",
+        "accuracy": 0.9072614475627769,
+        "balanced_accuracy": 0.8589121423292492,
+        "precision": 0.45040225769765385,
+        "recall": 0.8015141293756091,
+        "f1": 0.5767218596623699,
+        "matthews_corrcoef": 0.5569978257017452,
+        "roc_auc": 0.932182272201226,
+        "average_precision_pr_auc": 0.73984316958404,
+        "training_seconds": 8.95,
+        "status": "OK"
+      },
+      {
+        "model": "Dummy_Baseline",
+        "accuracy": 0.9211757754800591,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "matthews_corrcoef": 0.0,
+        "roc_auc": 0.5,
+        "average_precision_pr_auc": 0.07882422451994092,
+        "training_seconds": 8.67,
+        "status": "OK"
+      }
+    ]
+  },
+  "beneficiary_overlap": {
+    "checked": true,
+    "identifier": "DESYNPUF_ID",
+    "unique_train_identifiers": 69396,
+    "unique_test_identifiers": 17309,
+    "overlapping_identifiers": 0,
+    "overlap_percent_of_test_unique_ids": 0.0,
+    "warning": "No beneficiary overlap detected."
+  },
+  "output_folders": {
+    "tables": "C:\\Users\\National\\Downloads\\insurance-claims-triage\\insurance-claims-triage\\reports\\final_tables",
+    "plots": "C:\\Users\\National\\Downloads\\insurance-claims-triage\\insurance-claims-triage\\reports\\final_plots",
+    "models": "C:\\Users\\National\\Downloads\\insurance-claims-triage\\insurance-claims-triage\\reports\\final_models",
+    "report": "C:\\Users\\National\\Downloads\\insurance-claims-triage\\insurance-claims-triage\\reports\\FINAL_PROJECT_REPORT.md"
+  }
+}

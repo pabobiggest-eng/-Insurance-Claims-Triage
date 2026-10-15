@@ -1,0 +1,10 @@
+step,rows,cols,note
+0. Raw data,857563,115,original file
+1. Exact duplicates removed,857563,54,removed 0
+2. Unknown CLAIM_TYPE / missing CLM_ID removed,857563,54,removed 0
+3. Continuation lines merged (same CLM_ID),846520,54,"11,043 CLM_ID (22,086 rows) -> 11,043 claims"
+4. Orphan rows (no claim dates) removed,846242,54,removed 278
+5. Claims with THRU date before FROM date removed,846242,54,removed 0
+6. Negative amounts set to NaN,846242,54,"3,147 values: {'CLM_PMT_AMT': 2616, 'MEDREIMB_IP': 180, 'MEDREIMB_OP': 351}"
+7. Invalid age (<0 or >110) set to NaN,846242,62,0 values
+8. Final clean dataset,846242,56,"raw 857,563x115 -> 846,242x56 (raw code/date columns counts/flags mein badle)"

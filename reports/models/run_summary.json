@@ -1,0 +1,78 @@
+{
+  "target": "is_inpatient",
+  "excluded_columns": [
+    "is_inpatient",
+    "DESYNPUF_ID",
+    "CLM_ID",
+    "SP_STATE_CODE",
+    "dx_chapter",
+    "MEDREIMB_IP",
+    "BENRES_IP",
+    "PPPYMT_IP",
+    "MEDREIMB_OP",
+    "BENRES_OP",
+    "PPPYMT_OP",
+    "MEDREIMB_CAR",
+    "BENRES_CAR",
+    "PPPYMT_CAR"
+  ],
+  "features": [
+    "CLM_PMT_AMT",
+    "NCH_PRMRY_PYR_CLM_PD_AMT",
+    "NCH_BENE_BLOOD_DDCTBL_LBLTY_AM",
+    "BENE_SEX_IDENT_CD",
+    "BENE_RACE_CD",
+    "BENE_HI_CVRAGE_TOT_MONS",
+    "BENE_SMI_CVRAGE_TOT_MONS",
+    "BENE_HMO_CVRAGE_TOT_MONS",
+    "PLAN_CVRG_MOS_NUM",
+    "SP_ALZHDMTA",
+    "SP_CHF",
+    "SP_CHRNKIDN",
+    "SP_CNCR",
+    "SP_COPD",
+    "SP_DEPRESSN",
+    "SP_DIABETES",
+    "SP_ISCHMCHT",
+    "SP_OSTEOPRS",
+    "SP_RA_OA",
+    "SP_STRKETIA",
+    "n_dx",
+    "n_prcdr",
+    "n_physicians",
+    "BENE_ESRD_IND",
+    "claim_duration_days",
+    "claim_year",
+    "claim_month",
+    "age_at_claim",
+    "is_deceased",
+    "chronic_count"
+  ],
+  "best_model_by_f1": "RandomForest",
+  "comparison": [
+    {
+      "model": "LogisticRegression",
+      "accuracy": 0.9860384047267357,
+      "precision": 0.8641369245057715,
+      "recall": 0.9763885765684731,
+      "f1": 0.9168396973429527,
+      "roc_auc": 0.9980134909525267
+    },
+    {
+      "model": "RandomForest",
+      "accuracy": 0.9975598227474151,
+      "precision": 0.9812388326384753,
+      "recall": 0.9879319391349973,
+      "f1": 0.9845740111306167,
+      "roc_auc": 0.9997786411099412
+    },
+    {
+      "model": "ExtraTrees",
+      "accuracy": 0.9954918759231906,
+      "precision": 0.9696087216248507,
+      "recall": 0.9733153436773855,
+      "f1": 0.9714584969887405,
+      "roc_auc": 0.9993808167478397
+    }
+  ]
+}

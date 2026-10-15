@@ -1,0 +1,56 @@
+column,decision,reason
+NCH_BENE_PTA_COINSRNC_LBLTY_AM,DROP (leakage),STRUCTURAL: sirf ek class mein bhara hota hai (audit AUC ~1.0)
+CLM_PASS_THRU_PER_DIEM_AMT,DROP (leakage),STRUCTURAL: sirf ek class mein bhara hota hai (audit AUC ~1.0)
+NCH_BENE_PTB_COINSRNC_AMT,DROP (leakage),STRUCTURAL: sirf ek class mein bhara hota hai (audit AUC ~1.0)
+CLM_UTLZTN_DAY_CNT,DROP (leakage),STRUCTURAL: sirf ek class mein bhara hota hai (audit AUC ~1.0)
+NCH_BENE_PTB_DDCTBL_AMT,DROP (leakage),STRUCTURAL: sirf ek class mein bhara hota hai (audit AUC ~1.0)
+has_discharge_dt,DROP (leakage),STRUCTURAL: sirf ek class mein bhara hota hai (audit AUC ~1.0)
+has_admission_dt,DROP (leakage),STRUCTURAL: sirf ek class mein bhara hota hai (audit AUC ~1.0)
+has_drg,DROP (leakage),STRUCTURAL: sirf ek class mein bhara hota hai (audit AUC ~1.0)
+NCH_BENE_IP_DDCTBL_AMT,DROP (leakage),STRUCTURAL: sirf ek class mein bhara hota hai (audit AUC ~1.0)
+n_hcpcs,DROP (leakage),STRUCTURAL: sirf ek class mein bhara hota hai (audit AUC ~1.0)
+has_admit_dx,DROP (leakage),Admitting diagnosis sirf Inpatient claims mein hota hai (AUC 0.87)
+CLM_PMT_AMT,KEEP in standard / DROP in strict,Payment claim adjudicate hone ke baad pata chalti hai
+MEDREIMB_IP,KEEP in standard / DROP in strict,Annual inpatient total: is claim ka paisa isi mein shamil ho sakta hai
+BENRES_IP,KEEP in standard / DROP in strict,Annual inpatient total: is claim ka paisa isi mein shamil ho sakta hai
+PPPYMT_IP,KEEP in standard / DROP in strict,Annual inpatient total: is claim ka paisa isi mein shamil ho sakta hai
+NCH_PRMRY_PYR_CLM_PD_AMT,KEEP,leakage audit mein theek
+NCH_BENE_BLOOD_DDCTBL_LBLTY_AM,KEEP,leakage audit mein theek
+BENE_SEX_IDENT_CD,KEEP,leakage audit mein theek
+BENE_RACE_CD,KEEP,leakage audit mein theek
+BENE_HI_CVRAGE_TOT_MONS,KEEP,leakage audit mein theek
+BENE_SMI_CVRAGE_TOT_MONS,KEEP,leakage audit mein theek
+BENE_HMO_CVRAGE_TOT_MONS,KEEP,leakage audit mein theek
+PLAN_CVRG_MOS_NUM,KEEP,leakage audit mein theek
+SP_ALZHDMTA,KEEP,leakage audit mein theek
+SP_CHF,KEEP,leakage audit mein theek
+SP_CHRNKIDN,KEEP,leakage audit mein theek
+SP_CNCR,KEEP,leakage audit mein theek
+SP_COPD,KEEP,leakage audit mein theek
+SP_DEPRESSN,KEEP,leakage audit mein theek
+SP_DIABETES,KEEP,leakage audit mein theek
+SP_ISCHMCHT,KEEP,leakage audit mein theek
+SP_OSTEOPRS,KEEP,leakage audit mein theek
+SP_RA_OA,KEEP,leakage audit mein theek
+SP_STRKETIA,KEEP,leakage audit mein theek
+MEDREIMB_OP,KEEP,leakage audit mein theek
+BENRES_OP,KEEP,leakage audit mein theek
+PPPYMT_OP,KEEP,leakage audit mein theek
+MEDREIMB_CAR,KEEP,leakage audit mein theek
+BENRES_CAR,KEEP,leakage audit mein theek
+PPPYMT_CAR,KEEP,leakage audit mein theek
+n_dx,KEEP,leakage audit mein theek
+n_prcdr,KEEP,leakage audit mein theek
+n_physicians,KEEP,leakage audit mein theek
+dx_chapter,KEEP,leakage audit mein theek
+BENE_ESRD_IND,KEEP,leakage audit mein theek
+SP_STATE_CODE,KEEP,leakage audit mein theek
+claim_duration_days,KEEP,leakage audit mein theek
+claim_year,KEEP,leakage audit mein theek
+claim_month,KEEP,leakage audit mein theek
+age_at_claim,KEEP,leakage audit mein theek
+is_deceased,KEEP,leakage audit mein theek
+chronic_count,KEEP,leakage audit mein theek
+DESYNPUF_ID,ID (feature nahi),patient-level split / traceability
+CLM_ID,ID (feature nahi),patient-level split / traceability
+is_inpatient,TARGET,"1 = Inpatient, 0 = Outpatient"

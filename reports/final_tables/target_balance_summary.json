@@ -1,0 +1,14 @@
+{
+  "target": "is_inpatient",
+  "counts": {
+    "0": 779537,
+    "1": 66705
+  },
+  "percentages": {
+    "0": 92.1175,
+    "1": 7.8825
+  },
+  "majority_to_minority_ratio": 11.6863,
+  "imbalance_threshold_ratio": 1.5,
+  "imbalance_handling_recommended": true
+}

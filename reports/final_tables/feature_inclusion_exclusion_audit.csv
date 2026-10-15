@@ -1,0 +1,45 @@
+﻿feature,decision,reason
+DESYNPUF_ID,EXCLUDED,Identifier; high-cardinality / memorisation risk
+CLM_ID,EXCLUDED,Identifier; high-cardinality / memorisation risk
+is_inpatient,EXCLUDED,Target label; never a predictor
+CLM_PMT_AMT,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+NCH_PRMRY_PYR_CLM_PD_AMT,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+NCH_BENE_BLOOD_DDCTBL_LBLTY_AM,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+MEDREIMB_IP,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+BENRES_IP,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+PPPYMT_IP,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+MEDREIMB_OP,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+BENRES_OP,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+PPPYMT_OP,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+MEDREIMB_CAR,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+BENRES_CAR,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+PPPYMT_CAR,EXCLUDED,Claim payment/reimbursement; potential target leakage or post-decision information
+claim_duration_days,EXCLUDED,Potential post-outcome field; excluded to reduce temporal leakage
+BENE_SEX_IDENT_CD,INCLUDED,Available at prediction time (verify business timing)
+BENE_RACE_CD,INCLUDED,Available at prediction time (verify business timing)
+BENE_HI_CVRAGE_TOT_MONS,INCLUDED,Available at prediction time (verify business timing)
+BENE_SMI_CVRAGE_TOT_MONS,INCLUDED,Available at prediction time (verify business timing)
+BENE_HMO_CVRAGE_TOT_MONS,INCLUDED,Available at prediction time (verify business timing)
+PLAN_CVRG_MOS_NUM,INCLUDED,Available at prediction time (verify business timing)
+SP_ALZHDMTA,INCLUDED,Available at prediction time (verify business timing)
+SP_CHF,INCLUDED,Available at prediction time (verify business timing)
+SP_CHRNKIDN,INCLUDED,Available at prediction time (verify business timing)
+SP_CNCR,INCLUDED,Available at prediction time (verify business timing)
+SP_COPD,INCLUDED,Available at prediction time (verify business timing)
+SP_DEPRESSN,INCLUDED,Available at prediction time (verify business timing)
+SP_DIABETES,INCLUDED,Available at prediction time (verify business timing)
+SP_ISCHMCHT,INCLUDED,Available at prediction time (verify business timing)
+SP_OSTEOPRS,INCLUDED,Available at prediction time (verify business timing)
+SP_RA_OA,INCLUDED,Available at prediction time (verify business timing)
+SP_STRKETIA,INCLUDED,Available at prediction time (verify business timing)
+n_dx,INCLUDED,Available at prediction time (verify business timing)
+n_prcdr,INCLUDED,Available at prediction time (verify business timing)
+n_physicians,INCLUDED,Available at prediction time (verify business timing)
+dx_chapter,INCLUDED,Available at prediction time (verify business timing)
+BENE_ESRD_IND,INCLUDED,Available at prediction time (verify business timing)
+SP_STATE_CODE,INCLUDED,Available at prediction time (verify business timing)
+claim_year,INCLUDED,Available at prediction time (verify business timing)
+claim_month,INCLUDED,Available at prediction time (verify business timing)
+age_at_claim,INCLUDED,Available at prediction time (verify business timing)
+is_deceased,INCLUDED,Available at prediction time (verify business timing)
+chronic_count,INCLUDED,Available at prediction time (verify business timing)

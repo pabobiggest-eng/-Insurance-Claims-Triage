@@ -1,0 +1,4 @@
+﻿dataset,rows,columns,duplicate_rows,missing_cells,missing_cell_percent,memory_mb_approx
+train,676992,44,0,2502,0.0084,296.49
+test,169250,44,0,645,0.0087,74.12
+combined,846242,44,0,3147,0.0085,370.62
